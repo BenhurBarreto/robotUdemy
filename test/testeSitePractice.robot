@@ -43,4 +43,5 @@ Caso de Teste 06: Adicionar Cliente.
     Clicar no botão "Create an account".
     Preencher os campos obrigatórios.
     Clicar em "Register" para finalizar o cadastro.
+
 # ***Keywords***
