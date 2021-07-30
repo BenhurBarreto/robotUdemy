@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210729 21:48:14.404" rpa="false" schemaversion="2">
+<suite id="s1" name="Test" source="C:\udemy\robot\robotUdemy\test">
+<suite id="s1-s1" name="testeSitePractice" source="C:\udemy\robot\robotUdemy\test\testeSitePractice.robot">
+<test id="s1-s1-t1" name="Caso de Teste 04: Adicionar produtos no carrinho.">
+<kw name="Abrir Navegador" library="resource" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210729 21:48:14.611" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210729 21:48:14.611" endtime="20210729 21:48:15.854"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210729 21:48:15.854" endtime="20210729 21:48:15.972"/>
+</kw>
+<status status="PASS" starttime="20210729 21:48:14.611" endtime="20210729 21:48:15.972"/>
+</kw>
+<kw name="Acessar página home do site." library="resource">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210729 21:48:15.972" level="INFO">Opening url 'http://automationpractice.com/index.php'</msg>
+<status status="PASS" starttime="20210729 21:48:15.972" endtime="20210729 21:48:19.718"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>My Store</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210729 21:48:19.723" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210729 21:48:19.718" endtime="20210729 21:48:19.723"/>
+</kw>
+<status status="PASS" starttime="20210729 21:48:15.972" endtime="20210729 21:48:19.723"/>
+</kw>
+<kw name="Digitar o nome de produto &quot;t-shirt&quot; no campo de pesquisa." library="resource" sourcename="Digitar o nome de produto &quot;${produto}&quot; no campo de pesquisa.">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name=search_query</arg>
+<arg>${produto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210729 21:48:19.724" level="INFO">Typing text 't-shirt' into text field 'name=search_query'.</msg>
+<status status="PASS" starttime="20210729 21:48:19.723" endtime="20210729 21:48:19.794"/>
+</kw>
+<status status="PASS" starttime="20210729 21:48:19.723" endtime="20210729 21:48:19.795"/>
+</kw>
+<kw name="Clicar no botão de pesquisa." library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>name=submit_search</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210729 21:48:19.795" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" starttime="20210729 21:48:19.795" endtime="20210729 21:48:21.176"/>
+</kw>
+<status status="PASS" starttime="20210729 21:48:19.795" endtime="20210729 21:48:21.176"/>
+</kw>
+<kw name="Clicar no botão &quot;Add to chart&quot; do produto." library="resource">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>css=#center_column &gt; ul &gt; li</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210729 21:48:21.177" level="INFO">Simulating Mouse Over on element 'css=#center_column &gt; ul &gt; li'.</msg>
+<status status="PASS" starttime="20210729 21:48:21.177" endtime="20210729 21:48:21.455"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#center_column &gt; ul &gt; li &gt; div &gt; div.right-block &gt; div.button-container &gt; a.button.ajax_add_to_cart_button.btn.btn-default &gt; span</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210729 21:48:21.456" endtime="20210729 21:48:21.484"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#center_column &gt; ul &gt; li &gt; div &gt; div.right-block &gt; div.button-container &gt; a.button.ajax_add_to_cart_button.btn.btn-default &gt; span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210729 21:48:21.485" level="INFO">Clicking element 'css=#center_column &gt; ul &gt; li &gt; div &gt; div.right-block &gt; div.button-container &gt; a.button.ajax_add_to_cart_button.btn.btn-default &gt; span'.</msg>
+<status status="PASS" starttime="20210729 21:48:21.484" endtime="20210729 21:48:21.518"/>
+</kw>
+<status status="PASS" starttime="20210729 21:48:21.177" endtime="20210729 21:48:21.518"/>
+</kw>
+<kw name="Clicar no botão &quot;Proceed to checkout&quot;." library="resource">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#layer_cart &gt; div.clearfix &gt; div.layer_cart_cart.col-xs-12.col-md-6 &gt; div.button-container &gt; a &gt; span</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210729 21:48:21.518" endtime="20210729 21:48:23.117"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css=#layer_cart &gt; div.clearfix &gt; div.layer_cart_cart.col-xs-12.col-md-6 &gt; div.button-container &gt; a &gt; span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210729 21:48:23.117" level="INFO">Clicking element 'css=#layer_cart &gt; div.clearfix &gt; div.layer_cart_cart.col-xs-12.col-md-6 &gt; div.button-container &gt; a &gt; span'.</msg>
+<status status="PASS" starttime="20210729 21:48:23.117" endtime="20210729 21:48:26.251"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=#total_price</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210729 21:48:26.251" endtime="20210729 21:48:26.270"/>
+</kw>
+<status status="PASS" starttime="20210729 21:48:21.518" endtime="20210729 21:48:26.270"/>
+</kw>
+<status status="PASS" starttime="20210729 21:48:14.610" endtime="20210729 21:48:26.270"/>
+</test>
+<status status="PASS" starttime="20210729 21:48:14.432" endtime="20210729 21:48:26.271"/>
+</suite>
+<status status="PASS" starttime="20210729 21:48:14.406" endtime="20210729 21:48:26.272"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test">Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="testeSitePractice">Test.testeSitePractice</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
