@@ -21,7 +21,7 @@ Caso de Teste 02: Pesquisar produto não existente
 
 Caso de Teste 03: Listar produtos
     Acessar página home do site.
-    Passar mouse por cima da categoria "Women" no memu principal superior de categorias.
+    Passar mouse por cima da categoria "Women" no menu principal superior de categorias.
     Clicar na sub categoria "Summer Dresses".
 
 Caso de Teste 04: Adicionar produtos no carrinho.
