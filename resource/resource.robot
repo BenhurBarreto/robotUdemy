@@ -80,18 +80,45 @@ Clicar no botão de remoção de produtos (delete) no produto do carrinho.
 # Caso de Teste 06
 Clicar no botão superior direito "${login}".
     Click Element    xpath=//*[@id="header"]//a[contains(text(),"${login}")]
-    Wait Until Element Is Visible    ALREADY REGISTERED?
+    Wait Until Element Is Visible    xpath=//*[@id="create-account_form"]/h3
 
 Inserir um e-mail válido.
     Wait Until Element Is Visible    xpath=//*[@id="email_create"]
-    Input Text    xpath=//*[@id="email_create"]    text
-
+    Input Text    xpath=//*[@id="email_create"]    juliiocum@gmail.com
 
 Clicar no botão "Create an account".
     Click Element    xpath=//*[@id="SubmitCreate"]
-
+    Wait Until Element Is Visible   css=#account-creation_form > div:nth-child(1) > h3    10
 
 Preencher os campos obrigatórios.
-
+    Click Element    xpath=//*[@id="id_gender1"]
+    Input Text    xpath=//*[@id="customer_firstname"]    King Arthur
+    Input Text    xpath=//*[@id="customer_lastname"]    Pendragon
+    Input Text    xpath=//*[@id="passwd"]    pwd123
+    Set Focus To Element  xpath=//*[@id="days"]
+    Select From List By Index    xpath=//*[@id="days"]    23
+    # Click Element    xpath=//*[@id="days"]
+    # Input Text    xpath=//*[@id="days"]    23
+    Set Focus To Element  xpath=//*[@id="months"]
+    Select From List By Index    xpath=//*[@id="months"]    1
+    # Click Element    xpath=//*[@id="months"]
+    # Input Text    xpath=//*[@id="months"]    January
+    Set Focus To Element  xpath=//*[@id="years"]
+    Select From List By Value    xpath=//*[@id="years"]     1990
+    # Click Element    xpath=//*[@id="years"]
+    # Input Text    xpath=//*[@id="years"]    1990
+    Input Text    xpath=//*[@id="company"]    none
+    Input Text    xpath=//*[@id="address1"]    Private Street
+    Input Text    xpath=//*[@id="city"]    London
+    Set Focus To Element  xpath=//*[@id="id_state"]
+    Select From List By Index    xpath=//*[@id="id_state"]    22
+    # Click Element    xpath=//*[@id="id_state"]
+    # Input Text    xpath=//*[@id="id_state"]    Michigan
+    Input Text    xpath=//*[@id="postcode"]    65982
+    # Click Element    xpath=//*[@id="id_country"]
+    # Input Text    xpath=//*[@id="id_country"]    United States
+    Input Text    xpath=//*[@id="phone_mobile"]    985653248
 
 Clicar em "Register" para finalizar o cadastro.
+    Click Element    xpath=//*[@id="submitAccount"]/span
+    Wait Until Element Is Visible   xpath=//*[@id="center_column"]//*[contains(text(),"My account")]
