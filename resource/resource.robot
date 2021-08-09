@@ -73,18 +73,22 @@ Clicar no ícone carrinho de compras no menu superior direito.
     Title Should Be                 Order - My Store
 
 Clicar no botão de remoção de produtos (delete) no produto do carrinho.
-    Click Element    css=#\31 _1_0_0 > i
-    Wait Until Element Is Visible   #center_column > p
+    Click Element                   xpath=//*[@class="cart_quantity_delete"]
+    Wait Until Element Is Visible   xpath=//*[@id="center_column"]/p
     Wait Until Page Contains        Your shopping cart is empty.
 
 # Caso de Teste 06
-Clicar no botão superior direito "Sign in".
-
+Clicar no botão superior direito "${login}".
+    Click Element    xpath=//*[@id="header"]//a[contains(text(),"${login}")]
+    Wait Until Element Is Visible    ALREADY REGISTERED?
 
 Inserir um e-mail válido.
+    Wait Until Element Is Visible    xpath=//*[@id="email_create"]
+    Input Text    xpath=//*[@id="email_create"]    text
 
 
 Clicar no botão "Create an account".
+    Click Element    xpath=//*[@id="SubmitCreate"]
 
 
 Preencher os campos obrigatórios.

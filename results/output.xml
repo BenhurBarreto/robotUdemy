@@ -1,110 +1,219 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210806 14:38:22.655" rpa="false" schemaversion="2">
-<suite id="s1" name="Test" source="C:\udemy\robot\robotUdemy\test">
-<suite id="s1-s1" name="testeSitePractice" source="C:\udemy\robot\robotUdemy\test\testeSitePractice.robot">
-<test id="s1-s1-t1" name="Caso de Teste 04: Adicionar produtos no carrinho.">
-<kw name="Abrir Navegador" library="resource" type="SETUP">
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20210807 22:56:37.097" rpa="false">
+<suite id="s1" name="Test" source="C:\udemy\robot\suiteSitePractice\test">
+<suite id="s1-s1" name="testeSitePractice" source="C:\udemy\robot\suiteSitePractice\test\testeSitePractice.robot">
+<test id="s1-s1-t1" name="Caso de Teste 05: Remover produtos.">
+<kw name="Abrir Navegador" library="resource" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
 <arg>about:blank</arg>
 <arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210806 14:38:23.019" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210806 14:38:23.019" endtime="20210806 14:38:24.295"/>
+</arguments>
+<msg timestamp="20210807 22:56:37.332" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210807 22:56:37.331" endtime="20210807 22:56:38.857"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210806 14:38:24.296" endtime="20210806 14:38:24.422"/>
+<status status="PASS" starttime="20210807 22:56:38.857" endtime="20210807 22:56:38.979"></status>
 </kw>
-<status status="PASS" starttime="20210806 14:38:23.018" endtime="20210806 14:38:24.422"/>
+<status status="PASS" starttime="20210807 22:56:37.331" endtime="20210807 22:56:38.979"></status>
 </kw>
 <kw name="Acessar página home do site." library="resource">
 <kw name="Go To" library="SeleniumLibrary">
-<arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210806 14:38:24.424" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20210806 14:38:24.423" endtime="20210806 14:38:30.866"/>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210807 22:56:38.982" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20210807 22:56:38.981" endtime="20210807 22:56:44.521"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
-<arg>My Store</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210806 14:38:30.871" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20210806 14:38:30.867" endtime="20210806 14:38:30.872"/>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20210807 22:56:44.527" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210807 22:56:44.521" endtime="20210807 22:56:44.527"></status>
 </kw>
-<status status="PASS" starttime="20210806 14:38:24.423" endtime="20210806 14:38:30.872"/>
+<status status="PASS" starttime="20210807 22:56:38.980" endtime="20210807 22:56:44.527"></status>
 </kw>
-<kw name="Digitar o nome de produto &quot;t-shirt&quot; no campo de pesquisa." library="resource" sourcename="Digitar o nome de produto &quot;${produto}&quot; no campo de pesquisa.">
+<kw name="Clicar no ícone carrinho de compras no menu superior direito." library="resource">
+<kw name="Acessar página home do site." library="resource">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210807 22:56:44.528" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20210807 22:56:44.528" endtime="20210807 22:56:46.221"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20210807 22:56:46.232" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210807 22:56:46.222" endtime="20210807 22:56:46.232"></status>
+</kw>
+<status status="PASS" starttime="20210807 22:56:44.527" endtime="20210807 22:56:46.232"></status>
+</kw>
+<kw name="Digitar o nome de produto &quot;t-shirt&quot; no campo de pesquisa." library="resource">
 <kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
 <arg>name=search_query</arg>
 <arg>${produto}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210806 14:38:30.872" level="INFO">Typing text 't-shirt' into text field 'name=search_query'.</msg>
-<status status="PASS" starttime="20210806 14:38:30.872" endtime="20210806 14:38:30.951"/>
+</arguments>
+<msg timestamp="20210807 22:56:46.234" level="INFO">Typing text 't-shirt' into text field 'name=search_query'.</msg>
+<status status="PASS" starttime="20210807 22:56:46.234" endtime="20210807 22:56:46.316"></status>
 </kw>
-<status status="PASS" starttime="20210806 14:38:30.872" endtime="20210806 14:38:30.951"/>
+<status status="PASS" starttime="20210807 22:56:46.233" endtime="20210807 22:56:46.316"></status>
 </kw>
 <kw name="Clicar no botão de pesquisa." library="resource">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>name=submit_search</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210806 14:38:30.952" level="INFO">Clicking element 'name=submit_search'.</msg>
-<status status="PASS" starttime="20210806 14:38:30.952" endtime="20210806 14:38:33.075"/>
+<arguments>
+<arg>name=submit_search</arg>
+</arguments>
+<msg timestamp="20210807 22:56:46.317" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" starttime="20210807 22:56:46.317" endtime="20210807 22:56:47.506"></status>
 </kw>
-<status status="PASS" starttime="20210806 14:38:30.951" endtime="20210806 14:38:33.075"/>
+<status status="PASS" starttime="20210807 22:56:46.317" endtime="20210807 22:56:47.506"></status>
 </kw>
 <kw name="Clicar no botão &quot;Add to chart&quot; do produto." library="resource">
 <kw name="Mouse Over" library="SeleniumLibrary">
-<arg>css=#center_column &gt; ul &gt; li</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20210806 14:38:33.076" level="INFO">Simulating Mouse Over on element 'css=#center_column &gt; ul &gt; li'.</msg>
-<status status="PASS" starttime="20210806 14:38:33.075" endtime="20210806 14:38:33.368"/>
+<arguments>
+<arg>css=#center_column &gt; ul &gt; li</arg>
+</arguments>
+<msg timestamp="20210807 22:56:47.507" level="INFO">Simulating Mouse Over on element 'css=#center_column &gt; ul &gt; li'.</msg>
+<status status="PASS" starttime="20210807 22:56:47.507" endtime="20210807 22:56:47.801"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>css=#center_column &gt; ul &gt; li &gt; div &gt; div.right-block &gt; div.button-container &gt; a.button.ajax_add_to_cart_button.btn.btn-default &gt; span</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210806 14:38:33.368" endtime="20210806 14:38:33.389"/>
+<arguments>
+<arg>css=#center_column &gt; ul &gt; li &gt; div &gt; div.right-block &gt; div.button-container &gt; a.button.ajax_add_to_cart_button.btn.btn-default &gt; span</arg>
+</arguments>
+<status status="PASS" starttime="20210807 22:56:47.802" endtime="20210807 22:56:47.849"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>css=#center_column &gt; ul &gt; li &gt; div &gt; div.right-block &gt; div.button-container &gt; a.button.ajax_add_to_cart_button.btn.btn-default &gt; span</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210806 14:38:33.389" level="INFO">Clicking element 'css=#center_column &gt; ul &gt; li &gt; div &gt; div.right-block &gt; div.button-container &gt; a.button.ajax_add_to_cart_button.btn.btn-default &gt; span'.</msg>
-<status status="PASS" starttime="20210806 14:38:33.389" endtime="20210806 14:38:33.421"/>
+<arguments>
+<arg>css=#center_column &gt; ul &gt; li &gt; div &gt; div.right-block &gt; div.button-container &gt; a.button.ajax_add_to_cart_button.btn.btn-default &gt; span</arg>
+</arguments>
+<msg timestamp="20210807 22:56:47.849" level="INFO">Clicking element 'css=#center_column &gt; ul &gt; li &gt; div &gt; div.right-block &gt; div.button-container &gt; a.button.ajax_add_to_cart_button.btn.btn-default &gt; span'.</msg>
+<status status="PASS" starttime="20210807 22:56:47.849" endtime="20210807 22:56:47.888"></status>
 </kw>
-<status status="PASS" starttime="20210806 14:38:33.075" endtime="20210806 14:38:33.421"/>
+<status status="PASS" starttime="20210807 22:56:47.506" endtime="20210807 22:56:47.889"></status>
 </kw>
 <kw name="Clicar no botão &quot;Proceed to checkout&quot;." library="resource">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>css=#layer_cart &gt; div.clearfix &gt; div.layer_cart_cart.col-xs-12.col-md-6 &gt; div.button-container &gt; a &gt; span</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210806 14:38:33.421" endtime="20210806 14:38:34.557"/>
+<arguments>
+<arg>xpath=//*[@id="layer_cart"]//a[@title="Proceed to checkout"]</arg>
+</arguments>
+<status status="PASS" starttime="20210807 22:56:47.890" endtime="20210807 22:56:49.046"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>css=#layer_cart &gt; div.clearfix &gt; div.layer_cart_cart.col-xs-12.col-md-6 &gt; div.button-container &gt; a &gt; span</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210806 14:38:34.558" level="INFO">Clicking element 'css=#layer_cart &gt; div.clearfix &gt; div.layer_cart_cart.col-xs-12.col-md-6 &gt; div.button-container &gt; a &gt; span'.</msg>
-<status status="PASS" starttime="20210806 14:38:34.557" endtime="20210806 14:38:35.768"/>
+<arguments>
+<arg>xpath=//*[@id="layer_cart"]//a[@title="Proceed to checkout"]</arg>
+</arguments>
+<msg timestamp="20210807 22:56:49.047" level="INFO">Clicking element 'xpath=//*[@id="layer_cart"]//a[@title="Proceed to checkout"]'.</msg>
+<status status="PASS" starttime="20210807 22:56:49.046" endtime="20210807 22:56:50.658"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>css=#total_price</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210806 14:38:35.768" endtime="20210806 14:38:35.789"/>
+<arguments>
+<arg>css=#total_price</arg>
+</arguments>
+<status status="PASS" starttime="20210807 22:56:50.659" endtime="20210807 22:56:50.693"></status>
 </kw>
-<status status="PASS" starttime="20210806 14:38:33.421" endtime="20210806 14:38:35.789"/>
+<status status="PASS" starttime="20210807 22:56:47.889" endtime="20210807 22:56:50.693"></status>
 </kw>
-<status status="PASS" starttime="20210806 14:38:23.018" endtime="20210806 14:38:35.789"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css=#columns &gt; div.breadcrumb.clearfix &gt; a &gt; i</arg>
+</arguments>
+<msg timestamp="20210807 22:56:50.694" level="INFO">Clicking element 'css=#columns &gt; div.breadcrumb.clearfix &gt; a &gt; i'.</msg>
+<status status="PASS" starttime="20210807 22:56:50.693" endtime="20210807 22:56:52.707"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>My Store</arg>
+</arguments>
+<msg timestamp="20210807 22:56:52.711" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210807 22:56:52.707" endtime="20210807 22:56:52.711"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>css=#header &gt; div:nth-child(3) &gt; div &gt; div &gt; div:nth-child(3) &gt; div &gt; a</arg>
+</arguments>
+<msg timestamp="20210807 22:56:52.712" level="INFO">Clicking element 'css=#header &gt; div:nth-child(3) &gt; div &gt; div &gt; div:nth-child(3) &gt; div &gt; a'.</msg>
+<status status="PASS" starttime="20210807 22:56:52.712" endtime="20210807 22:56:54.275"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>css=#total_price</arg>
+</arguments>
+<status status="PASS" starttime="20210807 22:56:54.275" endtime="20210807 22:56:54.299"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Order - My Store</arg>
+</arguments>
+<msg timestamp="20210807 22:56:54.303" level="INFO">Page title is 'Order - My Store'.</msg>
+<status status="PASS" starttime="20210807 22:56:54.299" endtime="20210807 22:56:54.303"></status>
+</kw>
+<status status="PASS" starttime="20210807 22:56:44.527" endtime="20210807 22:56:54.303"></status>
+</kw>
+<kw name="Clicar no botão de remoção de produtos (delete) no produto do carrinho." library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@class="cart_quantity_delete"]</arg>
+</arguments>
+<msg timestamp="20210807 22:56:54.304" level="INFO">Clicking element 'xpath=//*[@class="cart_quantity_delete"]'.</msg>
+<status status="PASS" starttime="20210807 22:56:54.303" endtime="20210807 22:56:54.346"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="center_column"]/p</arg>
+</arguments>
+<status status="PASS" starttime="20210807 22:56:54.346" endtime="20210807 22:56:57.542"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Your shopping cart is empty.</arg>
+</arguments>
+<status status="PASS" starttime="20210807 22:56:57.542" endtime="20210807 22:56:57.562"></status>
+</kw>
+<status status="PASS" starttime="20210807 22:56:54.303" endtime="20210807 22:56:57.562"></status>
+</kw>
+<status status="PASS" starttime="20210807 22:56:37.330" endtime="20210807 22:56:57.562" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20210806 14:38:22.684" endtime="20210806 14:38:35.789"/>
+<status status="PASS" starttime="20210807 22:56:37.128" endtime="20210807 22:56:57.563"></status>
 </suite>
-<status status="PASS" starttime="20210806 14:38:22.657" endtime="20210806 14:38:35.791"/>
+<status status="PASS" starttime="20210807 22:56:37.098" endtime="20210807 22:56:57.564"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test">Test</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="testeSitePractice">Test.testeSitePractice</stat>
+<stat pass="1" fail="0" id="s1" name="Test">Test</stat>
+<stat pass="1" fail="0" id="s1-s1" name="testeSitePractice">Test.testeSitePractice</stat>
 </suite>
 </statistics>
 <errors>
