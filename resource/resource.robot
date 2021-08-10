@@ -5,6 +5,18 @@ Library         String
 ***Variables***
 ${url}      http://automationpractice.com
 ${browser}  chrome
+&{campo}    name=King Arthur
+...         secondName=Pendragon
+...         password=pwd123
+...         bDay=23
+...         bMonth=1
+...         bYears=1990
+...         company=none
+...         address=Private Street
+...         city=London
+...         state=22
+...         postalCode=95623
+...         phone=985653248
 
 ***Keywords***
 
@@ -94,32 +106,22 @@ Clicar no botão "Create an account".
 
 Preencher os campos obrigatórios.
     Click Element    xpath=//*[@id="id_gender1"]
-    Input Text    xpath=//*[@id="customer_firstname"]    King Arthur
-    Input Text    xpath=//*[@id="customer_lastname"]    Pendragon
-    Input Text    xpath=//*[@id="passwd"]    pwd123
+    Input Text    xpath=//*[@id="customer_firstname"]    ${campo.name}
+    Input Text    xpath=//*[@id="customer_lastname"]    ${campo.secondName}
+    Input Text    xpath=//*[@id="passwd"]    ${campo.password}
     Set Focus To Element  xpath=//*[@id="days"]
-    Select From List By Index    xpath=//*[@id="days"]    23
-    # Click Element    xpath=//*[@id="days"]
-    # Input Text    xpath=//*[@id="days"]    23
+    Select From List By Index    xpath=//*[@id="days"]    ${campo.bDay}
     Set Focus To Element  xpath=//*[@id="months"]
-    Select From List By Index    xpath=//*[@id="months"]    1
-    # Click Element    xpath=//*[@id="months"]
-    # Input Text    xpath=//*[@id="months"]    January
+    Select From List By Index    xpath=//*[@id="months"]    ${campo.bMonth}
     Set Focus To Element  xpath=//*[@id="years"]
-    Select From List By Value    xpath=//*[@id="years"]     1990
-    # Click Element    xpath=//*[@id="years"]
-    # Input Text    xpath=//*[@id="years"]    1990
-    Input Text    xpath=//*[@id="company"]    none
-    Input Text    xpath=//*[@id="address1"]    Private Street
-    Input Text    xpath=//*[@id="city"]    London
+    Select From List By Value    xpath=//*[@id="years"]     ${campo.bYears}
+    Input Text    xpath=//*[@id="company"]    ${campo.company}
+    Input Text    xpath=//*[@id="address1"]    ${campo.address}
+    Input Text    xpath=//*[@id="city"]    ${campo.city}
     Set Focus To Element  xpath=//*[@id="id_state"]
-    Select From List By Index    xpath=//*[@id="id_state"]    22
-    # Click Element    xpath=//*[@id="id_state"]
-    # Input Text    xpath=//*[@id="id_state"]    Michigan
-    Input Text    xpath=//*[@id="postcode"]    65982
-    # Click Element    xpath=//*[@id="id_country"]
-    # Input Text    xpath=//*[@id="id_country"]    United States
-    Input Text    xpath=//*[@id="phone_mobile"]    985653248
+    Select From List By Index    xpath=//*[@id="id_state"]    ${campo.state}
+    Input Text    xpath=//*[@id="postcode"]    ${campo.postalCode}
+    Input Text    xpath=//*[@id="phone_mobile"]    ${campo.phone}
 
 Clicar em "Register" para finalizar o cadastro.
     Click Element    xpath=//*[@id="submitAccount"]/span
