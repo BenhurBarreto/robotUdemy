@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210809 19:45:26.064" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210809 20:13:51.757" rpa="false" schemaversion="2">
 <suite id="s1" name="Test" source="C:\udemy\robot\robotUdemy\test">
 <suite id="s1-s1" name="testeSitePractice" source="C:\udemy\robot\robotUdemy\test\testeSitePractice.robot">
 <test id="s1-s1-t1" name="Caso de Teste 06: Adicionar Cliente.">
@@ -8,206 +8,214 @@
 <arg>about:blank</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210809 19:45:26.287" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210809 19:45:26.287" endtime="20210809 19:45:27.421"/>
+<msg timestamp="20210809 20:13:51.976" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210809 20:13:51.976" endtime="20210809 20:13:53.115"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210809 19:45:27.422" endtime="20210809 19:45:27.539"/>
+<status status="PASS" starttime="20210809 20:13:53.115" endtime="20210809 20:13:53.242"/>
 </kw>
-<status status="PASS" starttime="20210809 19:45:26.286" endtime="20210809 19:45:27.539"/>
+<status status="PASS" starttime="20210809 20:13:51.976" endtime="20210809 20:13:53.242"/>
 </kw>
 <kw name="Acessar página home do site." library="resource">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210809 19:45:27.540" level="INFO">Opening url 'http://automationpractice.com'</msg>
-<status status="PASS" starttime="20210809 19:45:27.540" endtime="20210809 19:45:35.348"/>
+<msg timestamp="20210809 20:13:53.243" level="INFO">Opening url 'http://automationpractice.com'</msg>
+<status status="PASS" starttime="20210809 20:13:53.243" endtime="20210809 20:13:59.110"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>My Store</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210809 19:45:35.353" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20210809 19:45:35.348" endtime="20210809 19:45:35.353"/>
+<msg timestamp="20210809 20:13:59.115" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" starttime="20210809 20:13:59.110" endtime="20210809 20:13:59.115"/>
 </kw>
-<status status="PASS" starttime="20210809 19:45:27.539" endtime="20210809 19:45:35.353"/>
+<status status="PASS" starttime="20210809 20:13:53.243" endtime="20210809 20:13:59.115"/>
 </kw>
 <kw name="Clicar no botão superior direito &quot;Sign in&quot;." library="resource" sourcename="Clicar no botão superior direito &quot;${login}&quot;.">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="header"]//a[contains(text(),"${login}")]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:35.354" level="INFO">Clicking element 'xpath=//*[@id="header"]//a[contains(text(),"Sign in")]'.</msg>
-<status status="PASS" starttime="20210809 19:45:35.353" endtime="20210809 19:45:43.521"/>
+<msg timestamp="20210809 20:13:59.116" level="INFO">Clicking element 'xpath=//*[@id="header"]//a[contains(text(),"Sign in")]'.</msg>
+<status status="PASS" starttime="20210809 20:13:59.116" endtime="20210809 20:14:01.875"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath=//*[@id="create-account_form"]/h3</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210809 19:45:43.521" endtime="20210809 19:45:43.543"/>
+<status status="PASS" starttime="20210809 20:14:01.876" endtime="20210809 20:14:01.902"/>
 </kw>
-<status status="PASS" starttime="20210809 19:45:35.353" endtime="20210809 19:45:43.543"/>
+<status status="PASS" starttime="20210809 20:13:59.116" endtime="20210809 20:14:01.902"/>
 </kw>
 <kw name="Inserir um e-mail válido." library="resource">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath=//*[@id="email_create"]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210809 19:45:43.544" endtime="20210809 19:45:43.568"/>
+<status status="PASS" starttime="20210809 20:14:01.902" endtime="20210809 20:14:01.924"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${email}</var>
+<arg>8</arg>
+<arg>[LOWER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20210809 20:14:01.924" level="INFO">${email} = vkofoaba</msg>
+<status status="PASS" starttime="20210809 20:14:01.924" endtime="20210809 20:14:01.924"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="email_create"]</arg>
-<arg>juliiocum@gmail.com</arg>
+<arg>${email}@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:43.569" level="INFO">Typing text 'juliiocum@gmail.com' into text field 'xpath=//*[@id="email_create"]'.</msg>
-<status status="PASS" starttime="20210809 19:45:43.568" endtime="20210809 19:45:43.648"/>
+<msg timestamp="20210809 20:14:01.924" level="INFO">Typing text 'vkofoaba@gmail.com' into text field 'xpath=//*[@id="email_create"]'.</msg>
+<status status="PASS" starttime="20210809 20:14:01.924" endtime="20210809 20:14:02.005"/>
 </kw>
-<status status="PASS" starttime="20210809 19:45:43.544" endtime="20210809 19:45:43.648"/>
+<status status="PASS" starttime="20210809 20:14:01.902" endtime="20210809 20:14:02.005"/>
 </kw>
 <kw name="Clicar no botão &quot;Create an account&quot;." library="resource">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="SubmitCreate"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:43.649" level="INFO">Clicking element 'xpath=//*[@id="SubmitCreate"]'.</msg>
-<status status="PASS" starttime="20210809 19:45:43.648" endtime="20210809 19:45:43.697"/>
+<msg timestamp="20210809 20:14:02.006" level="INFO">Clicking element 'xpath=//*[@id="SubmitCreate"]'.</msg>
+<status status="PASS" starttime="20210809 20:14:02.005" endtime="20210809 20:14:02.054"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>css=#account-creation_form &gt; div:nth-child(1) &gt; h3</arg>
 <arg>10</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210809 19:45:43.697" endtime="20210809 19:45:48.932"/>
+<status status="PASS" starttime="20210809 20:14:02.054" endtime="20210809 20:14:05.328"/>
 </kw>
-<status status="PASS" starttime="20210809 19:45:43.648" endtime="20210809 19:45:48.932"/>
+<status status="PASS" starttime="20210809 20:14:02.005" endtime="20210809 20:14:05.328"/>
 </kw>
 <kw name="Preencher os campos obrigatórios." library="resource">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="id_gender1"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:48.933" level="INFO">Clicking element 'xpath=//*[@id="id_gender1"]'.</msg>
-<status status="PASS" starttime="20210809 19:45:48.933" endtime="20210809 19:45:48.976"/>
+<msg timestamp="20210809 20:14:05.329" level="INFO">Clicking element 'xpath=//*[@id="id_gender1"]'.</msg>
+<status status="PASS" starttime="20210809 20:14:05.328" endtime="20210809 20:14:05.373"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="customer_firstname"]</arg>
 <arg>King Arthur</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:48.977" level="INFO">Typing text 'King Arthur' into text field 'xpath=//*[@id="customer_firstname"]'.</msg>
-<status status="PASS" starttime="20210809 19:45:48.977" endtime="20210809 19:45:49.069"/>
+<msg timestamp="20210809 20:14:05.373" level="INFO">Typing text 'King Arthur' into text field 'xpath=//*[@id="customer_firstname"]'.</msg>
+<status status="PASS" starttime="20210809 20:14:05.373" endtime="20210809 20:14:05.461"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="customer_lastname"]</arg>
 <arg>Pendragon</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:49.069" level="INFO">Typing text 'Pendragon' into text field 'xpath=//*[@id="customer_lastname"]'.</msg>
-<status status="PASS" starttime="20210809 19:45:49.069" endtime="20210809 19:45:49.153"/>
+<msg timestamp="20210809 20:14:05.461" level="INFO">Typing text 'Pendragon' into text field 'xpath=//*[@id="customer_lastname"]'.</msg>
+<status status="PASS" starttime="20210809 20:14:05.461" endtime="20210809 20:14:05.543"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="passwd"]</arg>
 <arg>pwd123</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:49.154" level="INFO">Typing text 'pwd123' into text field 'xpath=//*[@id="passwd"]'.</msg>
-<status status="PASS" starttime="20210809 19:45:49.154" endtime="20210809 19:45:49.229"/>
+<msg timestamp="20210809 20:14:05.544" level="INFO">Typing text 'pwd123' into text field 'xpath=//*[@id="passwd"]'.</msg>
+<status status="PASS" starttime="20210809 20:14:05.544" endtime="20210809 20:14:05.618"/>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="days"]</arg>
 <doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" starttime="20210809 19:45:49.229" endtime="20210809 19:45:49.245"/>
+<status status="PASS" starttime="20210809 20:14:05.618" endtime="20210809 20:14:05.636"/>
 </kw>
 <kw name="Select From List By Index" library="SeleniumLibrary">
 <arg>xpath=//*[@id="days"]</arg>
 <arg>23</arg>
 <doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
-<msg timestamp="20210809 19:45:49.245" level="INFO">Selecting options from selection list 'xpath=//*[@id="days"]' by index 23.</msg>
-<status status="PASS" starttime="20210809 19:45:49.245" endtime="20210809 19:45:49.388"/>
+<msg timestamp="20210809 20:14:05.636" level="INFO">Selecting options from selection list 'xpath=//*[@id="days"]' by index 23.</msg>
+<status status="PASS" starttime="20210809 20:14:05.636" endtime="20210809 20:14:05.782"/>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="months"]</arg>
 <doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" starttime="20210809 19:45:49.388" endtime="20210809 19:45:49.431"/>
+<status status="PASS" starttime="20210809 20:14:05.782" endtime="20210809 20:14:05.839"/>
 </kw>
 <kw name="Select From List By Index" library="SeleniumLibrary">
 <arg>xpath=//*[@id="months"]</arg>
 <arg>1</arg>
 <doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
-<msg timestamp="20210809 19:45:49.432" level="INFO">Selecting options from selection list 'xpath=//*[@id="months"]' by index 1.</msg>
-<status status="PASS" starttime="20210809 19:45:49.431" endtime="20210809 19:45:49.490"/>
+<msg timestamp="20210809 20:14:05.839" level="INFO">Selecting options from selection list 'xpath=//*[@id="months"]' by index 1.</msg>
+<status status="PASS" starttime="20210809 20:14:05.839" endtime="20210809 20:14:05.895"/>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="years"]</arg>
 <doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" starttime="20210809 19:45:49.490" endtime="20210809 19:45:49.503"/>
+<status status="PASS" starttime="20210809 20:14:05.895" endtime="20210809 20:14:05.907"/>
 </kw>
 <kw name="Select From List By Value" library="SeleniumLibrary">
 <arg>xpath=//*[@id="years"]</arg>
 <arg>1990</arg>
 <doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20210809 19:45:49.503" level="INFO">Selecting options from selection list 'xpath=//*[@id="years"]' by value 1990.</msg>
-<status status="PASS" starttime="20210809 19:45:49.503" endtime="20210809 19:45:49.550"/>
+<msg timestamp="20210809 20:14:05.907" level="INFO">Selecting options from selection list 'xpath=//*[@id="years"]' by value 1990.</msg>
+<status status="PASS" starttime="20210809 20:14:05.907" endtime="20210809 20:14:05.954"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="company"]</arg>
 <arg>none</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:49.550" level="INFO">Typing text 'none' into text field 'xpath=//*[@id="company"]'.</msg>
-<status status="PASS" starttime="20210809 19:45:49.550" endtime="20210809 19:45:49.619"/>
+<msg timestamp="20210809 20:14:05.954" level="INFO">Typing text 'none' into text field 'xpath=//*[@id="company"]'.</msg>
+<status status="PASS" starttime="20210809 20:14:05.954" endtime="20210809 20:14:06.028"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="address1"]</arg>
 <arg>Private Street</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:49.620" level="INFO">Typing text 'Private Street' into text field 'xpath=//*[@id="address1"]'.</msg>
-<status status="PASS" starttime="20210809 19:45:49.619" endtime="20210809 19:45:49.720"/>
+<msg timestamp="20210809 20:14:06.028" level="INFO">Typing text 'Private Street' into text field 'xpath=//*[@id="address1"]'.</msg>
+<status status="PASS" starttime="20210809 20:14:06.028" endtime="20210809 20:14:06.115"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="city"]</arg>
 <arg>London</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:49.720" level="INFO">Typing text 'London' into text field 'xpath=//*[@id="city"]'.</msg>
-<status status="PASS" starttime="20210809 19:45:49.720" endtime="20210809 19:45:49.799"/>
+<msg timestamp="20210809 20:14:06.116" level="INFO">Typing text 'London' into text field 'xpath=//*[@id="city"]'.</msg>
+<status status="PASS" starttime="20210809 20:14:06.115" endtime="20210809 20:14:06.189"/>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="id_state"]</arg>
 <doc>Sets the focus to the element identified by ``locator``.</doc>
-<status status="PASS" starttime="20210809 19:45:49.799" endtime="20210809 19:45:49.816"/>
+<status status="PASS" starttime="20210809 20:14:06.189" endtime="20210809 20:14:06.207"/>
 </kw>
 <kw name="Select From List By Index" library="SeleniumLibrary">
 <arg>xpath=//*[@id="id_state"]</arg>
 <arg>22</arg>
 <doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
-<msg timestamp="20210809 19:45:49.817" level="INFO">Selecting options from selection list 'xpath=//*[@id="id_state"]' by index 22.</msg>
-<status status="PASS" starttime="20210809 19:45:49.816" endtime="20210809 19:45:49.945"/>
+<msg timestamp="20210809 20:14:06.207" level="INFO">Selecting options from selection list 'xpath=//*[@id="id_state"]' by index 22.</msg>
+<status status="PASS" starttime="20210809 20:14:06.207" endtime="20210809 20:14:06.337"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="postcode"]</arg>
 <arg>65982</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:49.945" level="INFO">Typing text '65982' into text field 'xpath=//*[@id="postcode"]'.</msg>
-<status status="PASS" starttime="20210809 19:45:49.945" endtime="20210809 19:45:50.018"/>
+<msg timestamp="20210809 20:14:06.337" level="INFO">Typing text '65982' into text field 'xpath=//*[@id="postcode"]'.</msg>
+<status status="PASS" starttime="20210809 20:14:06.337" endtime="20210809 20:14:06.409"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>xpath=//*[@id="phone_mobile"]</arg>
 <arg>985653248</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:50.018" level="INFO">Typing text '985653248' into text field 'xpath=//*[@id="phone_mobile"]'.</msg>
-<status status="PASS" starttime="20210809 19:45:50.018" endtime="20210809 19:45:50.088"/>
+<msg timestamp="20210809 20:14:06.410" level="INFO">Typing text '985653248' into text field 'xpath=//*[@id="phone_mobile"]'.</msg>
+<status status="PASS" starttime="20210809 20:14:06.410" endtime="20210809 20:14:06.485"/>
 </kw>
-<status status="PASS" starttime="20210809 19:45:48.933" endtime="20210809 19:45:50.088"/>
+<status status="PASS" starttime="20210809 20:14:05.328" endtime="20210809 20:14:06.485"/>
 </kw>
 <kw name="Clicar em &quot;Register&quot; para finalizar o cadastro." library="resource">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//*[@id="submitAccount"]/span</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210809 19:45:50.089" level="INFO">Clicking element 'xpath=//*[@id="submitAccount"]/span'.</msg>
-<status status="PASS" starttime="20210809 19:45:50.089" endtime="20210809 19:46:00.410"/>
+<msg timestamp="20210809 20:14:06.486" level="INFO">Clicking element 'xpath=//*[@id="submitAccount"]/span'.</msg>
+<status status="PASS" starttime="20210809 20:14:06.485" endtime="20210809 20:14:09.336"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>xpath=//*[@id="center_column"]//*[contains(text(),"My account")]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210809 19:46:00.411" endtime="20210809 19:46:00.433"/>
+<status status="PASS" starttime="20210809 20:14:09.336" endtime="20210809 20:14:09.359"/>
 </kw>
-<status status="PASS" starttime="20210809 19:45:50.088" endtime="20210809 19:46:00.433"/>
+<status status="PASS" starttime="20210809 20:14:06.485" endtime="20210809 20:14:09.359"/>
 </kw>
-<status status="PASS" starttime="20210809 19:45:26.286" endtime="20210809 19:46:00.433"/>
+<status status="PASS" starttime="20210809 20:13:51.975" endtime="20210809 20:14:09.359"/>
 </test>
-<status status="PASS" starttime="20210809 19:45:26.087" endtime="20210809 19:46:00.434"/>
+<status status="PASS" starttime="20210809 20:13:51.781" endtime="20210809 20:14:09.360"/>
 </suite>
-<status status="PASS" starttime="20210809 19:45:26.066" endtime="20210809 19:46:00.435"/>
+<status status="PASS" starttime="20210809 20:13:51.758" endtime="20210809 20:14:09.360"/>
 </suite>
 <statistics>
 <total>

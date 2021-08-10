@@ -1,5 +1,6 @@
 ***Settings***
 Library         SeleniumLibrary
+Library         String
 
 ***Variables***
 ${url}      http://automationpractice.com
@@ -84,7 +85,8 @@ Clicar no botão superior direito "${login}".
 
 Inserir um e-mail válido.
     Wait Until Element Is Visible    xpath=//*[@id="email_create"]
-    Input Text    xpath=//*[@id="email_create"]    juliiocum@gmail.com
+    ${email}=   Generate Random String  8  [LOWER]
+    Input Text    xpath=//*[@id="email_create"]    ${email}@gmail.com
 
 Clicar no botão "Create an account".
     Click Element    xpath=//*[@id="SubmitCreate"]
